@@ -7,6 +7,8 @@ import GenreDetails from './Pages/GenreDetails'
 import Genres from './Pages/Genres'
 import Home from './Pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Tags from './Pages/Tags'
+import TagDetails from './Pages/TagDetails'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
           <Route path='/genre/:id' element={<GenreDetails />} />
           <Route path='/developers' element={<Developers />} />
           <Route path='/developer/:id' element={<DeveloperDetails />} />
+          <Route path='/tags' element={<Tags />} />
+          <Route path='/tag/:id' element={<TagDetails />} />
 
           <Route path='*' element={<h1>Not Found</h1>} />
 
