@@ -14,6 +14,7 @@ const Navbar = () => {
         <Link to={`/`} className={`text-white mx-4`}>Home</Link>
         <Link to={`/genres`} className={`text-white mx-4`}>Genres</Link>
         <Link to={`/developers`} className={`text-white mx-4`}>Developers</Link>
+        <Link to={`/tags`} className={`text-white mx-4`}>Tags</Link>
       </div>
       <div className='flex'>
         {colors.map((color) => (
