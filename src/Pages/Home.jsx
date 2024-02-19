@@ -15,7 +15,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className={`bg-gradient-to-br from-neutral-950 from-30% to-${theme}-950 text-${theme}-50 flex flex-wrap gap-4 justify-center`}>
+    <div className={`bg-gradient-radial from-${theme}-950 to-neutral-950 bg-cover bg-fixed text-${theme}-50 flex flex-wrap gap-4 justify-center`}>
       {games.map((game) => (
         <Link to={`/game/${game.id}`} key={game.id} className="w-80">
           <h2>{game.name}</h2>
