@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from '../Context/themeContext';
 import axios from 'axios';
 import requests from '../requests';
+import { Link } from 'react-router-dom';
 
 const Developers = () => {
 
@@ -23,14 +24,14 @@ const Developers = () => {
   return (
     <div>
       {developers.map((developer) => (
-        <div key={developer.id}>
+        <Link to={`/developer/${developer.id}`} key={developer.id}>
           <h2>{developer.name}</h2>
           <img src={developer.image_background} alt={developer.name} />
           <p>Games: {developer.games_count}</p>
           {developer.games.map((game) => (
             <p key={game.id}>{game.name}</p>
           ))}
-        </div>
+        </Link>
 
       ))}
     </div>

@@ -1,5 +1,6 @@
 import Navbar from './Components/Navbar'
 import { ThemeProvider } from './Context/themeContext'
+import DeveloperDetails from './Pages/DeveloperDetails'
 import Developers from './Pages/Developers'
 import GameDetails from './Pages/GameDetails'
 import GenreDetails from './Pages/GenreDetails'
@@ -19,6 +20,7 @@ function App() {
           <Route path='/genres' element={<Genres />} />
           <Route path='/genre/:id' element={<GenreDetails />} />
           <Route path='/developers' element={<Developers />} />
+          <Route path='/developer/:id' element={<DeveloperDetails />} />
 
           <Route path='*' element={<h1>Not Found</h1>} />
 
