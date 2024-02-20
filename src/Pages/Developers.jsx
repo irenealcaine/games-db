@@ -3,6 +3,7 @@ import { useTheme } from '../Context/themeContext';
 import axios from 'axios';
 import requests from '../requests';
 import { Link } from 'react-router-dom';
+import Layout from '../Components/Layout'
 
 const Developers = () => {
 
@@ -22,7 +23,7 @@ const Developers = () => {
   }, [])
 
   return (
-    <div>
+    <Layout>
       {developers.map((developer) => (
         <Link to={`/developer/${developer.id}`} key={developer.id}>
           <h2>{developer.name}</h2>
@@ -34,7 +35,7 @@ const Developers = () => {
         </Link>
 
       ))}
-    </div>
+    </Layout>
   )
 }
 

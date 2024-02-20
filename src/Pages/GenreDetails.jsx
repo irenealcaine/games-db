@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Layout from '../Components/Layout'
 
 const GenreDetails = () => {
 
@@ -24,13 +25,13 @@ const GenreDetails = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>{genre.name}</h1>
       <img src={genre.image_background} alt={genre.name} />
       <p>Games: {genre.games_count}</p>
 
       <div dangerouslySetInnerHTML={myHTML} />
-    </div>
+    </Layout>
   )
 }
 

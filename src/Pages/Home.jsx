@@ -5,6 +5,7 @@ import { useTheme } from '../Context/themeContext'
 import { Link } from 'react-router-dom'
 import placeholder from '../assets/game-controller.svg'
 import Hero from '../Components/Hero'
+import Layout from '../Components/Layout'
 
 const Home = () => {
   const [games, setGames] = useState([])
@@ -27,7 +28,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className={`bg-gradient-radial from-${theme}-950 to-neutral-950 bg-cover bg-fixed text-${theme}-50`}>
+    <Layout>
       <Hero />
       <h2 className="text-4xl font-bold">Best Games</h2>
       <div className=' flex flex-wrap gap-4 justify-center'>
@@ -60,8 +61,8 @@ const Home = () => {
       </div>
 
 
+    </Layout >
 
-    </div>
   )
 }
 

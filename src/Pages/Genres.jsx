@@ -3,6 +3,7 @@ import { useTheme } from '../Context/themeContext';
 import axios from 'axios';
 import requests from '../requests';
 import { Link } from 'react-router-dom';
+import Layout from '../Components/Layout'
 
 const Genres = () => {
 
@@ -22,7 +23,7 @@ const Genres = () => {
   }, [])
 
   return (
-    <div>
+    <Layout>
       {genres.map((genre) => (
         <Link to={`/genre/${genre.id}`} key={genre.id}>
           <h2>{genre.name}</h2>
@@ -33,7 +34,7 @@ const Genres = () => {
           ))}
         </Link>
       ))}
-    </div>
+    </Layout>
   )
 }
 

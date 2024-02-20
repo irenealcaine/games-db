@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Layout from '../Components/Layout'
 
 const DeveloperDetails = () => {
 
@@ -24,11 +25,11 @@ const DeveloperDetails = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>{developer.name}</h1>
       <img src={developer.image_background} alt={developer.name} />
       <div dangerouslySetInnerHTML={myHTML} />
-    </div>
+    </Layout>
   )
 }
 

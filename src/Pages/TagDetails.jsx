@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Layout from '../Components/Layout'
 
 const TagDetails = () => {
 
@@ -34,7 +35,7 @@ const TagDetails = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>{tag.name}</h1>
       <img src={tag.image_background} alt={tag.name} />
       <div dangerouslySetInnerHTML={myHTML} />
@@ -45,7 +46,7 @@ const TagDetails = () => {
           <img src={game.background_image} alt={game.name} />
         </div>
       ))}
-    </div>
+    </Layout>
   )
 }
 

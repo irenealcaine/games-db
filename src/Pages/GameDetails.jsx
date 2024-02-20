@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Layout from '../Components/Layout'
 
 const GameDetails = () => {
 
@@ -21,7 +22,7 @@ const GameDetails = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <div className='bg-slate-700'>
         <img
           src={game.background_image}
@@ -96,7 +97,7 @@ const GameDetails = () => {
         </div>
       }
 
-    </div>
+    </Layout>
   )
 }
 

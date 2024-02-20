@@ -3,6 +3,7 @@ import { useTheme } from '../Context/themeContext';
 import axios from 'axios';
 import requests from '../requests';
 import { Link } from 'react-router-dom';
+import Layout from '../Components/Layout'
 
 const Tags = () => {
 
@@ -22,11 +23,14 @@ const Tags = () => {
   }, [])
 
   return (
-    <div>
+    <Layout>
       {tags.map((tag) => (
-        <Link to={`/tag/${tag.id}`} key={tag.id}>{tag.name}</Link>
+        <Link to={`/tag/${tag.id}`} key={tag.id}>
+          <p>{tag.name}</p>
+          <img src={tag.image_background} alt={tag.name} />
+        </Link>
       ))}
-    </div>
+    </Layout>
   )
 }
 
