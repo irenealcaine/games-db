@@ -37,7 +37,7 @@ const GameDetails = () => {
         <a href={game.metacritic_url} className='bg-stone-300'>Metacritic</a>
       </div>
 
-      <p>{game.rating}</p>
+      <p>{game.metacritic}/100</p>
 
       {/* {game.ratings &&
         <div className="flex gap-4">

@@ -16,5 +16,8 @@ const possibleColors = [
   'bg-purple-950', 'to-purple-950', 'text-purple-50',
   'shadow-purple-900', 'border-purple-900',
   'bg-rose-950', 'to-rose-950', 'text-rose-50',
-  'shadow-rose-900', 'border-rose-900'
+  'shadow-rose-900', 'border-rose-900',
+  'from-red-200', 'to-red-400',
+  'from-red-400', 'to-red-600',
+  'from-red-600', 'to-red-800',
 ]
