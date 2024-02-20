@@ -20,4 +20,5 @@ const possibleColors = [
   'from-red-200', 'to-red-400',
   'from-red-400', 'to-red-600',
   'from-red-600', 'to-red-800',
+  'via-red-600'
 ]
