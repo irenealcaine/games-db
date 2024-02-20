@@ -3,7 +3,7 @@ import requests from '../requests'
 import axios from 'axios'
 import { useTheme } from '../Context/themeContext'
 import { Link } from 'react-router-dom'
-import placeholder from '../assets/placeholder.jpg'
+import placeholder from '../assets/game-controller.svg'
 import Hero from '../Components/Hero'
 
 const Home = () => {
