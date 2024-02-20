@@ -13,12 +13,16 @@ const Home = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    axios.get(requests.bestGames).then((res) => {
+    axios.get(`${requests.bestGames}`).then((res) => {
       setBest(res.data.results)
     })
 
-    axios.get(requests.lastGames).then((res) => {
+    const todayDate = new Date().toISOString().split('T')[0]
+    console.log(todayDate)
+
+    axios.get(`${requests.lastGames}&dates=2019-01-01,${todayDate}`).then((res) => {
       setLast(res.data.results)
+      console.log(res.data.results)
     })
   }, [])
 

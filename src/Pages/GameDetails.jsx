@@ -12,6 +12,7 @@ const GameDetails = () => {
     axios.get(`https://api.rawg.io/api/games/${id}?key=${key}`)
       .then((res) => {
         setGame(res.data)
+        console.log(res.data)
       })
   }, [])
 
