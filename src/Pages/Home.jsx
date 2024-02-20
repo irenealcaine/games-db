@@ -27,9 +27,24 @@ const Home = () => {
     })
   }, [])
 
+  const radius = 120;
+  const perimeter = 2 * Math.PI * radius;
+  const progress = 0.75 * perimeter;
+
   return (
     <Layout>
       <Hero />
+      <div class="flex items-center justify-center" >
+        <svg class="transform -rotate-90 w-72 h-72">
+          <circle cx="145" cy="145" r="120" stroke="#000" stroke-width="30" fill="transparent" class="text-gray-700" />
+
+          <circle cx="145" cy="145" r="120" stroke="#fff" stroke-width="30" fill="transparent" class="text-blue-500 "
+            strokeDasharray={perimeter}
+            strokeDashoffset={perimeter - progress}
+          />
+        </svg>
+        <span class="absolute text-5xl" x-text="70">70</span>
+      </div>
       <h2 className="text-4xl font-bold">Best Games</h2>
       <div className=' flex flex-wrap gap-4 justify-center'>
         {best.map((game) => (

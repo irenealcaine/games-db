@@ -11,23 +11,21 @@ const TagDetails = () => {
   const key = import.meta.env.VITE_API_KEY
 
   useEffect(() => {
-    axios.get(`https://api.rawg.io/api/tags/${id}?key=${key}`)
-      .then((res) => {
-        console.log(res.data)
-        setTag(res.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    const fetchData = async () => {
+      try {
+        const [tagResponse, gamesResponse] = await Promise.all([
+          axios.get(`https://api.rawg.io/api/tags/${id}?key=${key}`),
+          axios.get(`https://api.rawg.io/api/games?key=${key}&ordering=-released&tags=${id}`)
+        ]);
 
-    axios.get(`https://api.rawg.io/api/games?key=${key}&ordering=-released&tags=${id}`)
-      .then((res) => {
-        console.log(res.data)
-        setTagLastGames(res.data.results)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+        setTag(tagResponse.data);
+        setTagLastGames(gamesResponse.data.results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, [])
 
   const myHTML = {
