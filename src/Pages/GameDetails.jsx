@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../Components/Layout'
+import RadialProgress from '../Components/RadialProgress'
 
 const GameDetails = () => {
 
@@ -13,7 +14,7 @@ const GameDetails = () => {
     axios.get(`https://api.rawg.io/api/games/${id}?key=${key}`)
       .then((res) => {
         setGame(res.data)
-        console.log(res.data)
+        // console.log(res.data)
       })
   }, [])
 
@@ -40,7 +41,7 @@ const GameDetails = () => {
         {game.metacritic_url && <a href={game.metacritic_url} className='bg-stone-300'>Metacritic</a>}
       </div>
 
-      {game.metacritic && <p>{game.metacritic}/100</p>}
+      {game.metacritic && <RadialProgress radius={50} percentage={game.metacritic} />}
 
       {game.platforms &&
         <div className="flex gap-4">
