@@ -9,15 +9,15 @@ const RadialProgress = ({ radius, percentage }) => {
   const stroke = radius * 0.25;
 
   return (
-    <div class="flex items-center justify-center w-fit" >
-      <svg style={{ width: (radius * 2.5), height: (radius * 2.5) }} class="transform -rotate-90">
-        <circle cx={radius * 1.25} cy={radius * 1.25} r={radius} stroke="#ddd" stroke-width={stroke} fill="transparent" />
+    <div className="flex items-center justify-center w-fit" >
+      <svg style={{ width: (radius * 2.5), height: (radius * 2.5) }} className="transform -rotate-90">
+        <circle cx={radius * 1.25} cy={radius * 1.25} r={radius} stroke="#ddd3" stroke-width={stroke} fill="transparent" />
         <circle cx={radius * 1.25} cy={radius * 1.25} r={radius} stroke={color} stroke-width={stroke} fill="transparent"
           strokeDasharray={perimeter}
           strokeDashoffset={perimeter - progress}
         />
       </svg>
-      <span style={{ fontSize: (radius) }} class="absolute">{percentage}</span>
+      <span style={{ fontSize: (radius) }} className="absolute">{percentage}</span>
     </div>
   )
 }

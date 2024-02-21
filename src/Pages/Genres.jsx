@@ -13,7 +13,7 @@ const Genres = () => {
   useEffect(() => {
     axios.get(requests.allGenres)
       .then((res) => {
-        console.log(res.data.results)
+        // console.log(res.data.results)
         setGenres(res.data.results)
         // console.log(genres)
       })

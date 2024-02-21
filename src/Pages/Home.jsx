@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import placeholder from '../assets/game-controller.svg'
 import Hero from '../Components/Hero'
 import Layout from '../Components/Layout'
-import RadialProgress from '../Components/RadialProgress'
 
 const Home = () => {
   const [games, setGames] = useState([])
@@ -20,7 +19,7 @@ const Home = () => {
     })
 
     const todayDate = new Date().toISOString().split('T')[0]
-    console.log(todayDate)
+    // console.log(todayDate)
 
     axios.get(`${requests.lastGames}&dates=2019-01-01,${todayDate}`).then((res) => {
       setLast(res.data.results)

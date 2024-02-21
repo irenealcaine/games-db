@@ -12,7 +12,7 @@ const GenreDetails = () => {
   useEffect(() => {
     axios.get(`https://api.rawg.io/api/genres/${id}?key=${key}`)
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         setGenre(res.data)
       })
       .catch((error) => {
