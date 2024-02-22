@@ -7,7 +7,7 @@ const DeveloperDetails = () => {
 
   const { id } = useParams()
   const [developer, setDeveloper] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const key = import.meta.env.VITE_API_KEY
 
   useEffect(() => {

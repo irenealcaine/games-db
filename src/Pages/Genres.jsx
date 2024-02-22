@@ -9,7 +9,7 @@ import Loader from '../Components/Loader';
 const Genres = () => {
 
   const [genres, setGenres] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const { theme } = useTheme();
 
   useEffect(() => {

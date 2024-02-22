@@ -8,7 +8,7 @@ const GenreDetails = () => {
 
   const { id } = useParams()
   const [genre, setGenre] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const key = import.meta.env.VITE_API_KEY
 
   useEffect(() => {

@@ -2,15 +2,18 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../Components/Layout'
+import Loader from '../Components/Loader'
 
 const TagDetails = () => {
 
   const { id } = useParams()
   const [tag, setTag] = useState([])
   const [tagLastGames, setTagLastGames] = useState([])
+  const [loading, setLoading] = useState(false)
   const key = import.meta.env.VITE_API_KEY
 
   useEffect(() => {
+    setLoading(true)
     const fetchData = async () => {
       try {
         const [tagResponse, gamesResponse] = await Promise.all([
@@ -20,8 +23,10 @@ const TagDetails = () => {
 
         setTag(tagResponse.data);
         setTagLastGames(gamesResponse.data.results);
+        setLoading(false);
       } catch (error) {
         console.error(error);
+        setLoading(false);
       }
     };
 
@@ -34,6 +39,7 @@ const TagDetails = () => {
 
   return (
     <Layout>
+      {loading && <Loader />}
       <h1>{tag.name}</h1>
       <img src={tag.image_background} alt={tag.name} />
       <div dangerouslySetInnerHTML={myHTML} />
