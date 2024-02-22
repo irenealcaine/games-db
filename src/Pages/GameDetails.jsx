@@ -3,18 +3,26 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../Components/Layout'
 import RadialProgress from '../Components/RadialProgress'
+import Loader from '../Components/Loader'
 
 const GameDetails = () => {
 
   const { id } = useParams()
   const [game, setGame] = useState([])
   const key = import.meta.env.VITE_API_KEY
+  const [Loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     axios.get(`https://api.rawg.io/api/games/${id}?key=${key}`)
       .then((res) => {
         setGame(res.data)
         // console.log(res.data)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error)
+        setLoading(false)
       })
   }, [])
 
@@ -24,7 +32,8 @@ const GameDetails = () => {
 
   return (
     <Layout>
-      <div className='bg-slate-700'>
+      {Loading && <Loader />}
+      <div>
         <img
           src={game.background_image}
           alt={game.name}

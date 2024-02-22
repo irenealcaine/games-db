@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTheme } from '../Context/themeContext'
+import Loader from './Loader';
 
 const Hero = () => {
   const { theme } = useTheme();
