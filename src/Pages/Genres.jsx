@@ -35,7 +35,7 @@ const Genres = () => {
       {genres.map((genre) => (
         <Link to={`/genre/${genre.id}`} key={genre.id}>
           <h2>{genre.name}</h2>
-          <img src={genre.image_background} alt={genre.name} />
+          <img src={genre.image_background} alt={genre.name} className='' />
           <p>Games: {genre.games_count}</p>
           {genre.games.map((game) => (
             <p key={game.id}>{game.name}</p>
