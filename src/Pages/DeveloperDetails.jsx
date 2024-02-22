@@ -7,16 +7,22 @@ const DeveloperDetails = () => {
 
   const { id } = useParams()
   const [developer, setDeveloper] = useState([])
+  const [loading, setLoading] = useState(true)
   const key = import.meta.env.VITE_API_KEY
 
   useEffect(() => {
+    setLoading(true)
     axios.get(`https://api.rawg.io/api/developers/${id}?key=${key}`)
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         setDeveloper(res.data)
+        setLoading(false)
+
       })
       .catch((error) => {
         console.log(error)
+        setLoading(false)
+
       })
   }, [])
 

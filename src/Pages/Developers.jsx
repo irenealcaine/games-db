@@ -4,26 +4,34 @@ import axios from 'axios';
 import requests from '../requests';
 import { Link } from 'react-router-dom';
 import Layout from '../Components/Layout'
+import Loader from '../Components/Loader';
 
 const Developers = () => {
 
   const [developers, setDevelopers] = useState([])
+  const [loading, setLoading] = useState(true)
   const { theme } = useTheme();
 
   useEffect(() => {
+    setLoading(true)
     axios.get(requests.allDevelopers)
       .then((res) => {
-        console.log(res.data.results)
+        // console.log(res.data.results)
         setDevelopers(res.data.results)
         // console.log(developers)
+        setLoading(false)
+
       })
       .catch((error) => {
         console.log(error)
+        setLoading(false)
+
       })
   }, [])
 
   return (
     <Layout>
+      {loading && <Loader />}
       {developers.map((developer) => (
         <Link to={`/developer/${developer.id}`} key={developer.id}>
           <h2>{developer.name}</h2>
