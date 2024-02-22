@@ -7,12 +7,13 @@ import placeholder from '../assets/game-controller.svg'
 import Hero from '../Components/Hero'
 import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
+import RadialProgress from '../Components/RadialProgress'
 
 const Home = () => {
   // const [games, setGames] = useState([])
   const [best, setBest] = useState([])
   const [last, setLast] = useState([])
-  const [Loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ const Home = () => {
     <Layout>
       <Hero />
       <h2 className="text-4xl font-bold">Best Games</h2>
-      {Loading && <Loader />}
+      {loading && <Loader />}
       <div className=' flex flex-wrap gap-4 justify-center'>
         {best.map((game) => (
           <Link to={`/game/${game.id}`} key={game.id} className="w-80">
@@ -51,13 +52,14 @@ const Home = () => {
               src={game.background_image || placeholder}
               alt={game.name}
             />
+            <RadialProgress radius={20} percentage={game.metacritic} />
           </Link>
         ))}
       </div>
 
 
       <h2 className="text-4xl font-bold">Last Games</h2>
-      {Loading && <Loader />}
+      {loading && <Loader />}
 
       <div className=' flex flex-wrap gap-4 justify-center'>
         {last.map((game) => (
@@ -68,6 +70,7 @@ const Home = () => {
               src={game.background_image || placeholder}
               alt={game.name}
             />
+            <p>{game.released}</p>
           </Link>
         ))}
       </div>
