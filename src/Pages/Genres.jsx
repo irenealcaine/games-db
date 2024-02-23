@@ -15,32 +15,33 @@ const Genres = () => {
   useEffect(() => {
     setLoading(true)
     axios.get(requests.allGenres)
-      .then((res) => {
-        // console.log(res.data.results)
-        setGenres(res.data.results)
-        // console.log(genres)
-        setLoading(false)
 
+      .then((res) => {
+        setGenres(res.data.results)
+        setLoading(false)
       })
+
       .catch((error) => {
         console.log(error)
         setLoading(false)
-
       })
+
   }, [])
 
   return (
     <Layout>
       {loading && <Loader />}
       {genres.map((genre) => (
-        <Link to={`/genre/${genre.id}`} key={genre.id}>
-          <h2>{genre.name}</h2>
-          <img src={genre.image_background} alt={genre.name} className='' />
-          <p>Games: {genre.games_count}</p>
+        <div key={genre.id}>
+          <Link to={`/genre/${genre.id}`} >
+            <h2>{genre.name}</h2>
+            <img src={genre.image_background} alt={genre.name} className='' />
+          </Link>
+          <p>Related games: {genre.games_count}</p>
           {genre.games.map((game) => (
-            <p key={game.id}>{game.name}</p>
+            <Link to={`/game/${game.id}`} key={game.id}>{game.name}</Link>
           ))}
-        </Link>
+        </div>
       ))}
     </Layout>
   )
