@@ -9,6 +9,8 @@ import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import RadialProgress from '../Components/RadialProgress'
 
+
+
 const Home = () => {
   // const [games, setGames] = useState([])
   const [best, setBest] = useState([])
@@ -51,7 +53,7 @@ const Home = () => {
           <Link to={`/game/${game.id}`} key={game.id} className="w-80">
             <h2>{game.name}</h2>
             <img
-              className={`w-full aspect-video object-cover rounded-lg border-2 border-${theme}-900`}
+              className={`w-full aspect-video object-cover rounded-lg border-2 border-${theme}-900 shadow-neon shadow-${theme}-700`}
               src={game.background_image || placeholder}
               alt={game.name}
             />

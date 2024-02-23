@@ -2,7 +2,7 @@ const possibleColors = [
   'bg-red-950', 'bg-blue-950', 'bg-green-950',
   'bg-red-400', 'bg-blue-400', 'bg-green-400',
   'bg-red-700', 'bg-blue-700', 'bg-green-700',
-
+  'shadow-red-500', 'shadow-red-700',
   'to-red-950', 'to-blue-950', 'to-green-950',
   'from-red-950', 'from-blue-950', 'from-green-950',
   'text-red-50', 'text-blue-50', 'text-green-50',
