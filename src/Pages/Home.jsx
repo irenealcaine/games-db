@@ -8,6 +8,7 @@ import Hero from '../Components/Hero'
 import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import RadialProgress from '../Components/RadialProgress'
+import Row from '../Components/Row'
 
 
 
@@ -48,7 +49,7 @@ const Home = () => {
       <Hero />
       <h2 className="text-4xl font-bold">Best Games</h2>
       {loading && <Loader />}
-      <div className=' flex flex-wrap gap-4 justify-center'>
+      {/* <div className=' flex flex-wrap gap-4 justify-center'>
         {best.map((game) => (
           <Link to={`/game/${game.id}`} key={game.id} className="w-80">
             <h2>{game.name}</h2>
@@ -60,7 +61,8 @@ const Home = () => {
             <RadialProgress radius={20} percentage={game.metacritic} />
           </Link>
         ))}
-      </div>
+      </div> */}
+      <Row request={requests.bestGames} rowID={'best'} />
 
 
       <h2 className="text-4xl font-bold">Last Games</h2>
