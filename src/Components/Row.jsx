@@ -25,12 +25,12 @@ const Row = ({ request, rowID }) => {
   }, [])
 
   const slideLeft = () => {
-    let slider = document.getElementById('slider' + rowID)
+    let slider = document.getElementById('slider-' + rowID)
     slider.scrollLeft = slider.scrollLeft - 500
   }
 
   const slideRight = () => {
-    let slider = document.getElementById('slider' + rowID)
+    let slider = document.getElementById('slider-' + rowID)
     slider.scrollLeft = slider.scrollLeft + 500
   }
 
@@ -46,12 +46,13 @@ const Row = ({ request, rowID }) => {
         />
 
         <div
-          id={'slider' + rowID}
+          id={'slider-' + rowID}
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
         >
           {items.map((item) => (
             <RowItem item={item} key={item.id} />
           ))}
+
         </div>
 
         <MdChevronRight
