@@ -3,18 +3,23 @@ import { useEffect } from 'react'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import RowItem from './RowItem'
 import axios from 'axios'
+import Loader from './Loader'
 
 const Row = ({ request, rowID }) => {
   const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
+
     axios.get(request)
       .then((res) => {
         setItems(res.data.results)
-        // console.log(res.data.results)
+        setLoading(false)
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
+        setLoading(false)
       })
 
   }, [])
@@ -31,7 +36,7 @@ const Row = ({ request, rowID }) => {
 
   return (
     <div>
-
+      {loading && <Loader />}
       <div className="relative flex items-center group">
 
         <MdChevronLeft
