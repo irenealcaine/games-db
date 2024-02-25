@@ -36,7 +36,7 @@ const Row = ({ request, rowID }) => {
 
         <MdChevronLeft
           size={40}
-          className='bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block left-0'
+          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -left-5 transition-all duration-200'
           onClick={slideLeft}
         />
 
@@ -51,7 +51,7 @@ const Row = ({ request, rowID }) => {
 
         <MdChevronRight
           size={40}
-          className='bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block right-0'
+          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -right-5 transition-all duration-2005'
           onClick={slideRight}
 
         />
