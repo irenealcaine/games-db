@@ -3,7 +3,7 @@ import Layout from '../Components/Layout'
 
 const LastGames = () => {
   return (
-    <Layout>LastGames</Layout>
+    <main>LastGames</main>
   )
 }
 

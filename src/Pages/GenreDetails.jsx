@@ -32,14 +32,14 @@ const GenreDetails = () => {
   };
 
   return (
-    <Layout>
+    <main>
       {loading && <Loader />}
       <h1>{genre.name}</h1>
       <img src={genre.image_background} alt={genre.name} />
       <p>Games: {genre.games_count}</p>
 
       <div dangerouslySetInnerHTML={myHTML} />
-    </Layout>
+    </main>
   )
 }
 

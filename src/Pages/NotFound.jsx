@@ -3,7 +3,7 @@ import Layout from '../Components/Layout'
 
 const NotFound = () => {
   return (
-    <Layout>NotFound</Layout>
+    <main>NotFound</main>
   )
 }
 

@@ -29,7 +29,7 @@ const Genres = () => {
   }, [])
 
   return (
-    <Layout>
+    <main>
       {loading && <Loader />}
       {genres.map((genre) => (
         <div key={genre.id}>
@@ -43,7 +43,7 @@ const Genres = () => {
           ))}
         </div>
       ))}
-    </Layout>
+    </main>
   )
 }
 

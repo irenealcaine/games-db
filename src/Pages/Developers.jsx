@@ -30,7 +30,7 @@ const Developers = () => {
   }, [])
 
   return (
-    <Layout>
+    <main>
       {loading && <Loader />}
       {developers.map((developer) => (
         <Link to={`/developer/${developer.id}`} key={developer.id}>
@@ -43,7 +43,7 @@ const Developers = () => {
         </Link>
 
       ))}
-    </Layout>
+    </main>
   )
 }
 

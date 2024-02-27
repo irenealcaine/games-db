@@ -31,11 +31,11 @@ const DeveloperDetails = () => {
   };
 
   return (
-    <Layout>
+    <main>
       <h1>{developer.name}</h1>
       <img src={developer.image_background} alt={developer.name} />
       <div dangerouslySetInnerHTML={myHTML} />
-    </Layout>
+    </main>
   )
 }
 

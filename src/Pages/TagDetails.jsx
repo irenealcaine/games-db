@@ -38,7 +38,7 @@ const TagDetails = () => {
   };
 
   return (
-    <Layout>
+    <main>
       {loading && <Loader />}
       <h1>{tag.name}</h1>
       <img src={tag.image_background} alt={tag.name} />
@@ -50,7 +50,7 @@ const TagDetails = () => {
           <img src={game.background_image} alt={game.name} />
         </div>
       ))}
-    </Layout>
+    </main>
   )
 }
 

@@ -28,7 +28,7 @@ const Tags = () => {
   }, [])
 
   return (
-    <Layout>
+    <main>
       {loading && <Loader />}
       {tags.map((tag) => (
         <Link to={`/tag/${tag.id}`} key={tag.id}>
@@ -36,7 +36,7 @@ const Tags = () => {
           <img src={tag.image_background} alt={tag.name} />
         </Link>
       ))}
-    </Layout>
+    </main>
   )
 }
 

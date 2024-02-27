@@ -31,7 +31,7 @@ const GameDetails = () => {
   };
 
   return (
-    <Layout>
+    <main>
       {Loading && <Loader />}
       <div>
         <img
@@ -100,7 +100,7 @@ const GameDetails = () => {
         </div>
       }
 
-    </Layout>
+    </main>
   )
 }
 

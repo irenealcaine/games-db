@@ -3,7 +3,7 @@ import Layout from '../Components/Layout'
 
 const NextGames = () => {
   return (
-    <Layout>NextGames</Layout>
+    <main>NextGames</main>
   )
 }
 
