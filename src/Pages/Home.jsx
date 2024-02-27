@@ -14,7 +14,7 @@ const Home = () => {
 
 
   return (
-    <Layout>
+    <main>
       <Hero />
 
       <h2 className="text-4xl font-bold">Best Games</h2>
@@ -39,7 +39,7 @@ const Home = () => {
         to={'/next'}
       />
 
-    </Layout >
+    </main >
 
   )
 }
