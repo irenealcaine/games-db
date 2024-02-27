@@ -9,6 +9,9 @@ import Home from './Pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Tags from './Pages/Tags'
 import TagDetails from './Pages/TagDetails'
+import BestGames from './Pages/BestGames'
+import LastGames from './Pages/LastGames'
+import NextGames from './Pages/NextGames'
 
 function App() {
 
@@ -18,6 +21,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/best' element={<BestGames />} />
+          <Route path='/last' element={<LastGames />} />
+          <Route path='/next' element={<NextGames />} />
           <Route path='/game/:id' element={<GameDetails />} />
           <Route path='/genres' element={<Genres />} />
           <Route path='/genre/:id' element={<GenreDetails />} />

@@ -18,14 +18,26 @@ const Home = () => {
       <Hero />
 
       <h2 className="text-4xl font-bold">Best Games</h2>
-      <Row request={requests.bestGames} rowID={'best'} />
+      <Row
+        request={requests.bestGames}
+        rowID={'best'}
+        to={'/best'}
+      />
 
 
       <h2 className="text-4xl font-bold">Last Games</h2>
-      <Row request={`${requests.lastGames}&dates=2019-01-01,${todayDate}`} rowID={'last'} />
+      <Row
+        request={`${requests.lastGames}&dates=2019-01-01,${todayDate}`}
+        rowID={'last'}
+        to={'/last'}
+      />
 
       <h2 className="text-4xl font-bold">Next Games</h2>
-      <Row request={`${requests.nextGames}&dates=${tomorrowDate},2050-01-01`} rowID={'next'} />
+      <Row
+        request={`${requests.nextGames}&dates=${tomorrowDate},2050-01-01`}
+        rowID={'next'}
+        to={'/next'}
+      />
 
     </Layout >
 

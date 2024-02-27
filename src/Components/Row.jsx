@@ -5,8 +5,9 @@ import RowItem from './RowItem'
 import axios from 'axios'
 import Loader from './Loader'
 import Error from './Error'
+import { Link } from 'react-router-dom'
 
-const Row = ({ request, rowID }) => {
+const Row = ({ request, rowID, to }) => {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -67,7 +68,7 @@ const Row = ({ request, rowID }) => {
         />
 
       </div>
-      <p className='w-full text-end'>See more</p>
+      <Link to={to} className='block w-full text-end'>See more</Link>
     </div>
   )
 }
