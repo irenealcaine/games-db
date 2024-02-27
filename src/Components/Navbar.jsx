@@ -10,8 +10,8 @@ const Navbar = () => {
   const { toggleTheme, theme } = useTheme();
 
   return (
-    <div className={`h-svh w-40 fixed bg-neutral-950 flex flex-col justify-between items-center p-4`}>
-      <Link to={`/`} className={`text-${theme}-700 text-xl font-extrabold`}>GDB</Link>
+    <div className={`h-full w-full md:w-40 fixed backdrop-blur-sm bg-neutral-950/90 md:bg-neutral-950 flex flex-col justify-between items-center p-4`}>
+      <Link to={`/`} className={` text-${theme}-700 text-xl font-extrabold`}>GDB</Link>
       <div className={`flex flex-col`}>
         <Link to={`/`} className={`text-${theme}-50 mx-4`}>Home</Link>
         <Link to={`/genres`} className={`text-${theme}-50 mx-4`}>Genres</Link>
