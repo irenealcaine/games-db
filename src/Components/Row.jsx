@@ -4,10 +4,12 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import RowItem from './RowItem'
 import axios from 'axios'
 import Loader from './Loader'
+import Error from './Error'
 
 const Row = ({ request, rowID }) => {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     setLoading(true)
@@ -20,6 +22,7 @@ const Row = ({ request, rowID }) => {
       .catch((error) => {
         console.error("Error fetching data: ", error);
         setLoading(false)
+        setError(true)
       })
 
   }, [])
@@ -37,6 +40,7 @@ const Row = ({ request, rowID }) => {
   return (
     <div>
       {loading && <Loader />}
+      {error && <Error />}
       <div className="relative flex items-center group">
 
         <MdChevronLeft
@@ -57,7 +61,7 @@ const Row = ({ request, rowID }) => {
 
         <MdChevronRight
           size={40}
-          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -right-5 transition-all duration-2005'
+          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -right-5 transition-all duration-200'
           onClick={slideRight}
 
         />
