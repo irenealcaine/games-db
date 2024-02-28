@@ -3,8 +3,8 @@ import { useTheme } from '../Context/themeContext';
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const colors = ['red', 'green', 'blue',
-    // 'orange', 'yellow', 'lime', 'emerald', 'purple', 'rose'
+  const colors = ['red', 'green', 'blue','purple',
+    // 'orange', 'yellow', 'lime', 'emerald',  'rose'
   ]
 
   const { toggleTheme, theme } = useTheme();
