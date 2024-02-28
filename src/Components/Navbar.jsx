@@ -3,7 +3,7 @@ import { useTheme } from '../Context/themeContext';
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const colors = ['red', 'green', 'blue','purple',
+  const colors = ['red', 'green', 'blue', 'purple',
     // 'orange', 'yellow', 'lime', 'emerald',  'rose'
   ]
 
@@ -14,10 +14,10 @@ const Navbar = () => {
       <Link to={`/`} className={`hidden md:inline text-${theme}-700 text-xl font-extrabold`}>GDB</Link>
       <Link to={`/`} className={`md:hidden inline text-${theme}-700 text-xl font-extrabold`}>X</Link>
       <div className={`flex flex-col`}>
-        <Link to={`/`} className={`text-${theme}-50 mx-4`}>Home</Link>
-        <Link to={`/genres`} className={`text-${theme}-50 mx-4`}>Genres</Link>
-        <Link to={`/developers`} className={`text-${theme}-50 mx-4`}>Developers</Link>
-        <Link to={`/tags`} className={`text-${theme}-50 mx-4`}>Tags</Link>
+        <Link to={`/`} className={`text-${theme}-50 mx-4 hover:text-${theme}-400`}>Home</Link>
+        <Link to={`/genres`} className={`text-${theme}-50 mx-4 hover:text-${theme}-400`}>Genres</Link>
+        <Link to={`/developers`} className={`text-${theme}-50 mx-4 hover:text-${theme}-400`}>Developers</Link>
+        <Link to={`/tags`} className={`text-${theme}-50 mx-4 hover:text-${theme}-400`}>Tags</Link>
       </div>
       <div className='flex flex-col '>
         {colors.map((color) => (
