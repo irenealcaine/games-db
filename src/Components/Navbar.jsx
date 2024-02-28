@@ -23,13 +23,13 @@ const Navbar = () => {
         {open ? 'X' : 'O'}
       </p>
 
-      <div className={`flex flex-col px-4 *:transition-all ${open ? '' : 'hidden'}`}>
+      <div className={`flex flex-col px-4 *:transition-all ${open ? '' : 'hidden md:flex'}`}>
         <Link to={`/`} className={`text-${theme}-50 hover:text-${theme}-400`}>Home</Link>
         <Link to={`/genres`} className={`text-${theme}-50 hover:text-${theme}-400`}>Genres</Link>
         <Link to={`/developers`} className={`text-${theme}-50 hover:text-${theme}-400`}>Developers</Link>
         <Link to={`/tags`} className={`text-${theme}-50 hover:text-${theme}-400`}>Tags</Link>
       </div>
-      <div className={`flex flex-col ${open ? '' : 'hidden'}`}>
+      <div className={`flex flex-col ${open ? '' : 'hidden md:flex'}`}>
         {colors.map((color) => (
           <div key={color} className={`w-4 h-4 rounded-full bg-${color}-900 border border-${color}-500`} onClick={() => toggleTheme(color)}></div>
         ))}
