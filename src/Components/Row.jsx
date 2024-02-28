@@ -6,8 +6,11 @@ import axios from 'axios'
 import Loader from './Loader'
 import Error from './Error'
 import { Link } from 'react-router-dom'
+import { useTheme } from '../Context/themeContext'
 
 const Row = ({ request, rowID, to }) => {
+
+  const { theme } = useTheme()
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -46,7 +49,7 @@ const Row = ({ request, rowID, to }) => {
 
         <MdChevronLeft
           size={40}
-          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -left-5 transition-all duration-200'
+          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -left-5 transition-all'
           onClick={slideLeft}
         />
 
@@ -62,13 +65,13 @@ const Row = ({ request, rowID, to }) => {
 
         <MdChevronRight
           size={40}
-          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -right-5 transition-all duration-200'
+          className='text-white bg-black/80 border border-white shadow-neon shadow-transparent hover:shadow-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block -right-5 transition-all'
           onClick={slideRight}
 
         />
 
       </div>
-      <Link to={to} className='block w-full text-end'>See more</Link>
+      <Link to={to} className='block w-full text-end'><span className={`bg-${theme}-900 hover:bg-${theme}-700 border border-${theme}-500 px-4 py-1 rounded-lg transition-all`}>See more</span></Link>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const RowItem = ({ item }) => {
         alt={item?.name}
       />
       <Link to={`/game/${item?.id}`}>
-        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 rounded-lg flex flex-col gap-2 justify-center items-center transition-all duration-200">
+        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 rounded-lg flex flex-col gap-2 justify-center items-center transition-all">
           <p className="w-10/12 text-pretty white-space-normal text-xs md:text-sm font-bold flex justify-center items-center text-center">
             {item?.name}
           </p>
