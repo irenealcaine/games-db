@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link to={`/developers`} className={`text-${theme}-50 hover:text-${theme}-400`}>Developers</Link>
         <Link to={`/tags`} className={`text-${theme}-50 hover:text-${theme}-400`}>Tags</Link>
       </div>
-      <div className={`flex flex-col
+      <div className={`flex justify-around
 
       `}>
         {colors.map((color) => (
