@@ -8,28 +8,31 @@ const Navbar = () => {
   ]
 
   const { toggleTheme, theme } = useTheme();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
-    <div className={`md:h-full md:w-40 fixed backdrop-blur-sm bg-neutral-950/90 md:bg-neutral-950 flex flex-col justify-between items-center p-4 z-10 transition
-    ${open ? 'h-full w-full' : ''}
+    <div className={`h-full w-full md:w-40 fixed backdrop-blur-sm bg-neutral-950/90 md:bg-neutral-950 flex flex-col justify-between items-center p-4 z-10 transition
+    ${open ? '' : '-translate-x-full md:translate-x-0'}
     `}>
-
-      <Link to={`/`} className={`hidden md:inline text-${theme}-700 text-xl font-extrabold`}>GDB</Link>
-
       <p
         onClick={() => setOpen(!open)}
-        className={`md:hidden inline text-${theme}-700 text-xl font-extrabold`}>
+        className={`absolute top-4  md:hidden inline text-${theme}-700 text-xl font-extrabold ${open ? 'right-4' : '-right-4'}`}>
         {open ? 'X' : 'O'}
       </p>
 
-      <div className={`flex flex-col px-4 *:transition-all ${open ? '' : 'hidden md:flex'}`}>
+      <Link to={`/`} className={`inline text-${theme}-700 text-xl font-extrabold`}>GDB</Link>
+
+      <div className={`flex flex-col px-4 *:transition-all
+
+      `}>
         <Link to={`/`} className={`text-${theme}-50 hover:text-${theme}-400`}>Home</Link>
         <Link to={`/genres`} className={`text-${theme}-50 hover:text-${theme}-400`}>Genres</Link>
         <Link to={`/developers`} className={`text-${theme}-50 hover:text-${theme}-400`}>Developers</Link>
         <Link to={`/tags`} className={`text-${theme}-50 hover:text-${theme}-400`}>Tags</Link>
       </div>
-      <div className={`flex flex-col ${open ? '' : 'hidden md:flex'}`}>
+      <div className={`flex flex-col
+
+      `}>
         {colors.map((color) => (
           <div key={color} className={`w-4 h-4 rounded-full bg-${color}-900 border border-${color}-500`} onClick={() => toggleTheme(color)}></div>
         ))}
