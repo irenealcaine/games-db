@@ -3,7 +3,6 @@ import { useTheme } from '../Context/themeContext';
 import axios from 'axios';
 import requests from '../requests';
 import { Link } from 'react-router-dom';
-import Layout from '../Components/Layout'
 import Loader from '../Components/Loader';
 
 const Developers = () => {
