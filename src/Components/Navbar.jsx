@@ -8,7 +8,7 @@ const Navbar = () => {
   ]
 
   const { toggleTheme, theme } = useTheme();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={`h-full w-full md:w-40 fixed backdrop-blur-sm bg-neutral-950/90 md:bg-neutral-950 flex flex-col justify-between items-center p-4 z-10 transition
