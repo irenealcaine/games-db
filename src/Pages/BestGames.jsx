@@ -7,6 +7,7 @@ import Loader from '../Components/Loader';
 import placeholder from '../assets/game-controller.svg'
 import RadialProgress from '../Components/RadialProgress';
 import Input from '../Components/Input';
+import Select from '../Components/Select';
 
 const BestGames = () => {
 
@@ -37,15 +38,18 @@ const BestGames = () => {
 
   return (
     <main>
-      <h1>BestGames</h1>
+      <h1 className='text-6xl font-bold'>BestGames</h1>
+      <div className='flex flex-wrap justify-center gap-8 m-6'>
+        <Input type={'text'} onChange={(e) => (setSearch(e.target.value))} placeholder={'Search...'} />
+        <Select name={'platforms'} onChange={(e) => (setPlatformSearch(e.target.value))}>
+          <option value="" className={`bg-${theme}-900`}>All Platforms</option>
+          {platforms && platforms.map((platform) => (
+            <option key={platform.id} value={platform.id} className={`bg-${theme}-900`}>{platform.name}</option>
+          ))}
+        </Select>
+      </div>
 
-      <Input type={'text'} onChange={(e) => (setSearch(e.target.value))} placeholder={'Search...'} />
-      <select name="" id="" onChange={(e) => (setPlatformSearch(e.target.value))}>
-        <option value="" >All Platforms</option>
-        {platforms && platforms.map((platform) => (
-          <option key={platform.id} value={platform.id}>{platform.name}</option>
-        ))}
-      </select>
+
 
 
       {loading && <Loader />}
