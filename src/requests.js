@@ -1,7 +1,7 @@
 const key = import.meta.env.VITE_API_KEY
 
 const requests = {
-  allGames: `https://api.rawg.io/api/games?key=${key}&page_size=40`,
+  allGames: `https://api.rawg.io/api/games?key=${key}&page_size=12`,
   lastGames: `https://api.rawg.io/api/games?key=${key}&page_size=20&ordering=-released`,
   nextGames: `https://api.rawg.io/api/games?key=${key}&page_size=20&ordering=released`,
   bestGames: `https://api.rawg.io/api/games?key=${key}&page_size=20&ordering=-metacritic`,

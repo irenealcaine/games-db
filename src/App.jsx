@@ -14,6 +14,7 @@ import LastGames from './Pages/LastGames'
 import NextGames from './Pages/NextGames'
 import NotFound from './Pages/NotFound'
 import MainLayout from './Components/MainLayout'
+import AllGames from './Pages/AllGames'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <MainLayout>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/all' element={<AllGames />} />
             <Route path='/best' element={<BestGames />} />
             <Route path='/last' element={<LastGames />} />
             <Route path='/next' element={<NextGames />} />
