@@ -7,6 +7,7 @@ import Loader from './Loader'
 import Error from './Error'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../Context/themeContext'
+import LinkButton from './LinkButton'
 
 const Row = ({ request, rowID, to }) => {
 
@@ -71,7 +72,8 @@ const Row = ({ request, rowID, to }) => {
         />
 
       </div>
-      <Link to={to} className='block w-full text-end'><span className={`bg-${theme}-900 hover:bg-${theme}-700 border border-${theme}-500 px-4 py-1 rounded-lg transition-all`}>See more</span></Link>
+      <div className='flex justify-end'><LinkButton to={to} value={'See more'} /></div>
+
     </div>
   )
 }
