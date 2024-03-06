@@ -38,8 +38,8 @@ const BestGames = () => {
 
   return (
     <main>
-      <h1 className='text-6xl font-bold'>BestGames</h1>
-      <div className='flex flex-wrap justify-center gap-8 m-6'>
+      <h1 className='text-6xl font-bold'>Best Games</h1>
+      <div className='flex flex-col md:flex-row flex-wrap justify-center md:gap-8 gap-2 m-6'>
         <Input type={'text'} onChange={(e) => (setSearch(e.target.value))} placeholder={'Search...'} />
         <Select name={'platforms'} onChange={(e) => (setPlatformSearch(e.target.value))}>
           <option value="" className={`bg-${theme}-900`}>All Platforms</option>
