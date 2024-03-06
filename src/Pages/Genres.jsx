@@ -30,9 +30,9 @@ const Genres = () => {
   return (
     <main>
       {loading && <Loader />}
-      <div className='flex flex-wrap gap-4'>
+      <div className='flex flex-wrap gap-4 justify-center'>
         {genres.map((genre) => (
-          <div key={genre.id} className='relative border w-72 aspect-video rounded-lg overflow-hidden group'>
+          <div key={genre.id} className='relative w-72 aspect-video rounded-lg overflow-hidden group'>
             <Link to={`/genre/${genre.id}`} >
               <h2 className={`absolute top-4 left-4 z-20 py-1 px-4 bg-${theme}-900 bg-opacity-80 rounded-md group-hover:underline`}>{genre.name}</h2>
               <img src={genre.image_background} alt={genre.name} className='absolute top-0 w-full aspect-video object-cover z-10 group-hover:scale-105 transition-all' />
