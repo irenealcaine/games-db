@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Loader from '../Components/Loader';
 import placeholder from '../assets/game-controller.svg'
 import RadialProgress from '../Components/RadialProgress';
+import Input from '../Components/Input';
 
 const BestGames = () => {
 
@@ -38,7 +39,7 @@ const BestGames = () => {
     <main>
       <h1>BestGames</h1>
 
-      <input type="text" onChange={(e) => (setSearch(e.target.value))} />
+      <Input type={'text'} onChange={(e) => (setSearch(e.target.value))} placeholder={'Search...'} />
       <select name="" id="" onChange={(e) => (setPlatformSearch(e.target.value))}>
         <option value="" >All Platforms</option>
         {platforms && platforms.map((platform) => (
@@ -48,9 +49,9 @@ const BestGames = () => {
 
 
       {loading && <Loader />}
-      <div className='columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-x-0 pt-8 '>
+      <div className='columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 pt-8 '>
         {games.map((game) => (
-          <div key={game.id} className={` rounded-xl overflow-hidden px-4 pb-8 group`}>
+          <div key={game.id} className={`bg-${theme}-900 bg-opacity-15 rounded-xl overflow-hidden px-4 group mb-6`}>
             <Link to={`/game/${game.id}`} key={game.id}>
               <h2 className='m-2 text-xl font-bold group-hover:underline'>{game.name}</h2>
               <img className={`w-full aspect-video object-cover rounded-xl border border-${theme}-500 shadow-neon shadow-${theme}-700 group-hover:scale-105 transition-all`} src={game.background_image || placeholder} alt={game.name} />
@@ -61,6 +62,12 @@ const BestGames = () => {
                     <p key={platform.platform.id} className={`hidden group-hover:block`}>{platform.platform.name}</p>
                   ))}
                 </div>
+              </div>
+
+              <div className='flex justify-end gap-2 m-2 my-4'>
+                {game.genres.map((genre) => (
+                  <span key={genre.id} className={`px-2 border border-${theme}-500 rounded-full`}>{genre.name}</span>
+                ))}
               </div>
             </Link>
           </div>
