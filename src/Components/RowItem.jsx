@@ -9,7 +9,7 @@ const RowItem = ({ item }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="w-[140px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative mx-2 my-6">
+    <div className="w-[140px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative mx-2 my-6 text-white">
       <img
         className={`w-full aspect-square md:aspect-video object-cover block rounded-lg border border-${theme}-500 shadow-neon shadow-${theme}-700`}
         src={item?.background_image || placeholder}
